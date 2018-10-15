@@ -1,0 +1,1 @@
+M3 S1000    ;starts the spindle, S-value must be > 0 but does not have any effect on RPMs
