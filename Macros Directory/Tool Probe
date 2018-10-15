@@ -1,5 +1,4 @@
-M585 Z0 F100 E4 L0 S1      ;Probe current tool in Z-direction with Feedrate 1000 versus endstop 4 active high
-;G10 P1 Z-14.25             ;Set toollength with probe offset
-G91
-;G1 Z10 F12000             ;Move 10mm away from the probe
-G90
+G10 Z0           ;Reset Tool 1
+G1 Z20 F2000         ;Go to 20mm above 0 without tool compensation
+M585 Z-5.3 F100 E4 L0 S1      ;Probe in Z-direction with Feedrate 1000 versus endstop 4 active high, Z-5.5 = -20 + 14.7 (theoretical distance to zero compensated by the tool probe height)
+G1 Z20 F12000             ;Move to the real Z20
