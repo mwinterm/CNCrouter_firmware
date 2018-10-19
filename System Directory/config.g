@@ -42,11 +42,13 @@ M574 X1 Y1 Z1 U1 S1               ; Set active high endstops
 M574 V1 S0                        ; Set active low endstops
 
 ; Z-Probe
-M558 P0 H5 F120 T6000       ; Disable Z probe but set dive height, probe speed and travel speed
+M558 P9 H5 F500 T4000 X0 Y0 Z1 ; Set Z probe type/mode 5. Not using on XY, but using it on Z.
+;M558 P0 H5 F120 T6000       ; Disable Z probe but set dive height, probe speed and travel speed
 M557 X15:535 Y15:1835 S100  ; Define mesh grid
 
 ; Heaters
 M140 H-1                    ; Disable heated bed
+M307 H3 A-1 C-1 D-1         ; Disable heater 3 for use with BLtouch
 
 ; Fans
 M106 P0 S0.3 I0 F500 H-1    ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
