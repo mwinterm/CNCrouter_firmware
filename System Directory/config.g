@@ -26,7 +26,7 @@ M584 X0 Y1 Z2 U3 V4           ; Map drives to axis
 M584 Y1:3                   ; Map drive 1 and drive 3 to Y
 M350 Z16 I1                  ; Configure microstepping without interpolation
 M350 X16 Y16 I1             ; Configure microstepping with interpolation
-M92 X53.333 Y53.333 Z685.712 ; Set steps per mm
+M92 X53.333 Y53.333 Z685.712 U53.333 ; Set steps per mm
 M566 X900 Y900 Z12 U900         ; Set maximum instantaneous speed changes (mm/min)
 M203 X24000 Y24000 Z1800 U24000   ; Set maximum speeds (mm/min)
 M201 X500 Y500 Z250 U500        ; Set accelerations (mm/s^2)
@@ -44,7 +44,7 @@ M574 V1 S0                        ; Set active low endstops
 ; Z-Probe
 M558 P9 H5 F500 T4000 X0 Y0 Z1 ; Set Z probe type/mode 5. Not using on XY, but using it on Z.
 ;M558 P0 H5 F120 T6000       ; Disable Z probe but set dive height, probe speed and travel speed
-M557 X15:535 Y15:1835 S100  ; Define mesh grid
+M557 X0:610 Y0:1930 S110  ; Define mesh grid
 
 ; Heaters
 M140 H-1                    ; Disable heated bed
@@ -83,3 +83,4 @@ M453 P20 R1                 ; Set Pin 20 to run Spindle
 
 ; Miscellaneous
 T0                          ; Select first tool
+G29 S1                      ; Load Height map

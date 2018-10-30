@@ -1,6 +1,7 @@
 ; homez.g
 ; called to home the Z axis
-G59.3
+G59.3            ; select last WCS which is reserved for homeing
+G10 L2 X0 Y0 Z0  ; reset the coordinate system
 G91              ; relative positioning
 G1 S1 Z200 F1800 ; move Z up until the endstop is triggered
 G92 Z140
