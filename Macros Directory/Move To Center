@@ -1,2 +1,4 @@
-G90      ;set to absolut position (will be automatically reset when in a macro)
-G53 G1 X305 Y965 Z70 F12000   ;move in machine coordinates to center
+M120
+G90
+G53 G0 X305 Y965 Z70
+M121

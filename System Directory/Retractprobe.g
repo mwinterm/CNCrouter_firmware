@@ -1,0 +1,1 @@
+M280 P3 S90 I1     ; Retracts servo 3 of BLtouch to position 90 with inverse polarity (I1)

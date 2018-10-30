@@ -1,0 +1,1 @@
+M280 P3 S10 I1    ; deploys the probe by setting servo 3 of BLTouch to position 10 with inverse polarity (I1)
