@@ -1,4 +1,2 @@
-G10 Z0           ;Reset Tool 1
-G1 Z20 F2000         ;Go to 20mm above 0 without tool compensation
-M585 Z-5.3 F100 E4 L0 S1      ;Probe in Z-direction with Feedrate 1000 versus endstop 4 active high, Z-5.5 = -20 + 14.7 (theoretical distance to zero compensated by the tool probe height)
-G1 Z20 F12000             ;Move to the real Z20
+M585 Z14.8 F100 E4 L0 S1      ;Probe in Z-direction with Feedrate 100 versus endstop 4 active high, Z14.7 represents the probe height
+G1 Z20 F12000             ;Move to the Z20 with compensated tool
