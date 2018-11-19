@@ -27,9 +27,9 @@ M584 Y1:3                   ; Map drive 1 and drive 3 to Y
 M350 Z16 I1                  ; Configure microstepping without interpolation
 M350 X16 Y16 I1             ; Configure microstepping with interpolation
 M92 X53.333 Y53.333 Z685.712 U53.333 ; Set steps per mm
-M566 X900 Y900 Z12 U900         ; Set maximum instantaneous speed changes (mm/min)
-M203 X24000 Y24000 Z1800 U24000   ; Set maximum speeds (mm/min)
-M201 X500 Y500 Z250 U500        ; Set accelerations (mm/s^2)
+M566 X9000 Y9000 Z120 U9000         ; Set maximum instantaneous speed changes (mm/min)
+M203 X18000 Y18000 Z2400 U18000   ; Set maximum speeds (mm/min)
+M201 X1000 Y1000 Z250 U1000        ; Set accelerations (mm/s^2)
 M906 X2000 Y2000 Z2000 U2000 I30  ; Set motor currents (mA) and motor idle factor in per cent
 M84 S30                     ; Set idle timeout
 
@@ -44,7 +44,9 @@ M574 V1 S0                        ; Set active low endstops
 ; Z-Probe
 M558 P9 H5 F500 T4000 X0 Y0 Z1 ; Set Z probe type/mode 5. Not using on XY, but using it on Z.
 ;M558 P0 H5 F120 T6000       ; Disable Z probe but set dive height, probe speed and travel speed
-M557 X0:610 Y0:1930 S110  ; Define mesh grid
+M557 X35:610 Y70:1800 S100  ; Define mesh grid
+;M557 X35:140 Y70:180 S100  ; Define mesh grid
+M376 Z-1                  ; Bed compensation is not tapered off
 
 ; Heaters
 M140 H-1                    ; Disable heated bed
