@@ -1,2 +1,0 @@
-M585 Z0 F100 E4 L1 S0      ;Fake probe in Z-direction with Feedrate 100 versus endstop 4 active low i.e. the endstop is always triggered (this behavior is useful to scratch off a tool)
-G1 Z20 F12000             ;Move to the Z20 with compensated tool
