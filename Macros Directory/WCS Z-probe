@@ -1,4 +1,12 @@
-G30 S-1
+T0
+G10 P0 X-40 Y-40 Z0
 G91
-G0 Z10
+G0 X40 Y40
 G90
+G30 S-1
+G10 L20 Z0
+G53 G0 Z140
+G91
+G0 X-40 Y-40
+G90
+M291 P"Retract probe and select your tool" S2

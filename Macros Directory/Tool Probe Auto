@@ -1,0 +1,7 @@
+G53 G0 Z100       ;Retract tool to move savely
+G53 G0 X27.5 Y20      ;Move to the tool probe position
+G53 G0 Z60            ; Lower tool down to proximity of probe
+G59.3
+M585 Z47.12 F100 E4 L0 S1      ;Probe in Z-direction with Feedrate 100 versus endstop 4 active high, Z13.3 represents the probe height compensated by the pocket depth
+G53 G0 Z100              ;Move to the Z20 with compensated tool
+G54
