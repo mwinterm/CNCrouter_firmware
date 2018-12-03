@@ -26,7 +26,7 @@ M584 X0 Y1 Z2 U3 V4           ; Map drives to axis
 M584 Y1:3                   ; Map drive 1 and drive 3 to Y
 M350 Z16 I1                  ; Configure microstepping without interpolation
 M350 X16 Y16 I1             ; Configure microstepping with interpolation
-M92 X52.986 Y53.308 Z685.712 U53.333 ; Set steps per mm
+M92 X51.970 Y53.308 Z685.712 U53.333 ; Set steps per mm
 M566 X9000 Y9000 Z120 U9000         ; Set maximum instantaneous speed changes (mm/min)
 M203 X18000 Y18000 Z2400 U18000   ; Set maximum speeds (mm/min)
 M201 X1000 Y1000 Z250 U1000        ; Set accelerations (mm/s^2)
@@ -34,11 +34,11 @@ M906 X2200 Y2200 Z2000 U2200 I30  ; Set motor currents (mA) and motor idle facto
 M84 S30                     ; Set idle timeout
 
 ; Axis Limits
-M208 X0 Y0 Z0 S1            ; Set axis minima
-M208 X610 Y1930 Z140 S0     ; Set axis maxima
+M208 X0 Y0 Z0 U0 S1            ; Set axis minima
+M208 X610 Y1930 Z140 U1930 S0     ; Set axis maxima
 
 ; Endstops
-M574 X1 Y1 Z1 U1 S1               ; Set active high endstops
+M574 X1 Y1 Z2 U1 S1               ; Set active high endstops
 M574 V1 S0                        ; Set active low endstops
 
 ; Z-Probe
@@ -59,7 +59,7 @@ M106 P2 S1 I0 F500 H-1      ; Set fan 2 value, PWM signal inversion and frequenc
 
 ; Tools
 M563 P0 D H                 ; Define tool 0
-G10 P0 X0 Y0 Z0             ; Set tool 0 axis offsets
+G10 P0 X-40 Y-40            ; Set tool 0 axis offsets
 G10 P0 R0 S0                ; Set initial tool 0 active and standby temperatures to 0C
 M563 P1 D H                 ; Define tool 1
 G10 P1 X0 Y0 Z0             ; Set tool 1 axis offsets
@@ -84,5 +84,6 @@ M106 P0 I-1                 ; Disable fan0
 M453 P20 R1                 ; Set Pin 20 to run Spindle
 
 ; Miscellaneous
-T0                          ; Select first tool
+T1                          ; Select first tool
+G10 L2 P9 X0 Y0 Z31.51
 G29 S1                      ; Load Height map

@@ -1,13 +1,9 @@
 ; homeall.g
-G59.3            ; select last WCS which is reserved for homeing
-G10 L2 X0 Y0 Z0  ; reset the coordinate system
 G91                            ; relative positioning
-G1 S1 X-700 Y-2000 Z150 F6000  ; move X,Y and Z up until the endstop is triggered
-G92 X0 Y0 Z140 U0               ; set X,Y, Z and U to 0
-G1 X5 Y5 Z-5 F6000             ; move 5mm away from endstop
+G0 H1 Z150                     ; move Z up until endstop is triggered
+G1 H1 X-700 Y-2000 Z150 F6000  ; move X,Y until the endstop is triggered
+G1 X5 Y5 Z-5 F6000 H2          ; move 5mm away from endstop
 M584 Y1                        ; Seperate Y and U axis
-G1 S1 X-10 Y-10 U-10 Z10 F180   ; move X,Y and Z again slow up until the endstop is triggered
-G92 X0 Y0 Z140 U0 V0              ; set X,Y,Z and U 
+G1 H1 X-10 Y-10 U-10 Z10 F180   ; move X,Y and Z again slow up until the endstop is triggered
 M584 Y1:3                      ; Join Y and U axis again
-G54
 G90

@@ -1,12 +1,5 @@
-T0
-G10 P0 X-40 Y-40 Z0
-G91
-G0 X40 Y40
-G90
-G30 S-1
-G10 L20 Z0
-G53 G0 Z140
-G91
-G0 X-40 Y-40
-G90
-M291 P"Retract probe and select your tool" S2
+T0   ; Select probe
+G30 S-3    ; Probe the point and set current WCS
+G53 G0 Z140   ; Retract
+T1	; Select Tool 1
+M291 P"Retract probe and select your tool /n if different from T1" S2    ; Asks to select the right tool
