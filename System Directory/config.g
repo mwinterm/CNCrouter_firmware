@@ -53,11 +53,8 @@ M140 H-1                    ; Disable heated bed
 M307 H3 A-1 C-1 D-1         ; Disable heater 3 for use with BLtouch
 
 ; Fans
-M106 P0 S0.3 I0 F500 H-1    ; Set fan 0 value, PWM signal inversion and frequency. Thermostatic control is turned off
-M106 P1 S1 I0 F500 H-1      ; Set fan 1 value, PWM signal inversion and frequency. Thermostatic control is turned off
-M106 P2 S1 I0 F500 H-1      ; Set fan 2 value, PWM signal inversion and frequency. Thermostatic control is turned off
+M106 P0 F250 L0.5 B4 H101 T-1:100 C"DuetFan"  ; Set fan 0 value, switch fan0 trinamic driver get too hot
 
-; Tools
 M563 P0 D H                 ; Define tool 0
 G10 P0 X-40 Y-40            ; Set tool 0 axis offsets
 G10 P0 R0 S0                ; Set initial tool 0 active and standby temperatures to 0C
@@ -76,12 +73,18 @@ G10 P4 R0 S0                ; Set initial tool 4 active and standby temperatures
 M563 P5 D H                 ; Define tool 5
 G10 P5 X0 Y0 Z0             ; Set tool 5 axis offsets
 G10 P5 R0 S0                ; Set initial tool 5 active and standby temperatures to 0C
+M563 P6 D H                 ; Define tool 5
+G10 P6 X0 Y0 Z0             ; Set tool 5 axis offsets
+G10 P6 R0 S0                ; Set initial tool 5 active and standby temperatures to 0C
+
 
 ; Automatic saving after power loss is not enabled
 
 ; Custom settings
-M106 P0 I-1                 ; Disable fan0
-M453 P20 R1                 ; Set Pin 20 to run Spindle
+M106 P2 I-1                 ; Disable fan2
+M453 P22 R1                 ; Set Pin 20 to run Spindle
+M106 P1 I-1                 ; Disable fan1
+M42 P21 S0                  ; Make sure vacuum is not running
 
 ; Miscellaneous
 T1                          ; Select first tool
