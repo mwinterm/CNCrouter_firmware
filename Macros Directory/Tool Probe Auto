@@ -1,3 +1,4 @@
+G90
 G53 G0 Z140       ;Retract tool to move savely
 G53 G0 X27.5 Y20      ;Move to the tool probe position
 G53 G0 Z20            ; Lower tool down to proximity of probe

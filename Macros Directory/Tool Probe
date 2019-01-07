@@ -1,2 +1,3 @@
+G90
 M585 Z14.67 F100 E4 L0 S1      ;Probe in Z-direction with Feedrate 100 versus endstop 4 active high, Z14.7 represents the probe height
 G1 Z20 F12000             ;Move to the Z20 with compensated tool

@@ -1,0 +1,4 @@
+M98 P"/macros/Move To Front"
+M291 P"Insert Tool: 1" R"Tool Change" S2
+G28
+M98 P"/macros/Tool Probe Auto"
