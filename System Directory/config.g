@@ -30,7 +30,7 @@ M92 X51.970 Y53.308 Z685.712 U53.333 ; Set steps per mm
 M566 X9000 Y9000 Z120 U9000         ; Set maximum instantaneous speed changes (mm/min)
 M203 X18000 Y18000 Z2400 U18000   ; Set maximum speeds (mm/min)
 M201 X1000 Y1000 Z250 U1000        ; Set accelerations (mm/s^2)
-M906 X2200 Y2200 Z2000 U2200 I30  ; Set motor currents (mA) and motor idle factor in per cent
+M906 X2800 Y2800 Z2800 U2800 I30  ; Set motor currents (mA) and motor idle factor in per cent
 M84 S30                     ; Set idle timeout
 
 ; Axis Limits
@@ -53,7 +53,7 @@ M140 H-1                    ; Disable heated bed
 M307 H3 A-1 C-1 D-1         ; Disable heater 3 for use with BLtouch
 
 ; Fans
-M106 P0 F250 L0.5 B4 H101 T-1:100 C"DuetFan"  ; Set fan 0 value, switch fan0 trinamic driver get too hot
+M106 P0 F25000 L0.5 B4 H100:101 T45:100 C"DuetFan"  ; Set fan 0 value, switch fan0 trinamic driver get too hot
 
 M563 P0 D H                 ; Define tool 0
 G10 P0 X-40 Y-40            ; Set tool 0 axis offsets
