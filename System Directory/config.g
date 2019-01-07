@@ -31,6 +31,9 @@ M566 X9000 Y9000 Z120 U9000         ; Set maximum instantaneous speed changes (m
 M203 X18000 Y18000 Z2400 U18000   ; Set maximum speeds (mm/min)
 M201 X1000 Y1000 Z250 U1000        ; Set accelerations (mm/s^2)
 M906 X2800 Y2800 Z2800 U2800 I30  ; Set motor currents (mA) and motor idle factor in per cent
+M915 P0 S3 F1 R3             ; Set stall detection for X-axis
+M915 P1:3 S3 F1 R3           ; Set stall detection for Y-axis
+M915 P2 S3 F1 R3             ; Set stall detection for Z-axis
 M84 S30                     ; Set idle timeout
 
 ; Axis Limits
